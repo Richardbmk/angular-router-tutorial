@@ -6,6 +6,18 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 
 const appRoutes: Routes = [
   { path: 'compose', component: ComposeMessageComponent, outlet: 'popup' },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: 'crises-center',
+    loadChildren: () =>
+      import('./crisis-center/crisis-center.module').then(
+        (m) => m.CrisisCenterModule
+      ),
+  },
   { path: '', redirectTo: '/heroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

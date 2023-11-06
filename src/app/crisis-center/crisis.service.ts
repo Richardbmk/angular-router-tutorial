@@ -19,7 +19,7 @@ export class CrisisService {
   getCrisis(id: number | string) {
     return this.getCrises().pipe(
       // (+) before `id` turns the string into a number
-      map((heroes: Crisis[]) => heroes.find((hero) => hero.id === +id)!)
+      map((crises: Crisis[]) => crises.find((crisis) => crisis.id === +id)!)
     );
   }
 }
