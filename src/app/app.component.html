@@ -14,6 +14,13 @@
   >
     Heroes
   </a>
+  <a
+    routerLink="/admin"
+    routerLinkActive="activate"
+    ariaCurrentWhenActive="page"
+  >
+    Admin
+  </a>
   <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
 </nav>
 

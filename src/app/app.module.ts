@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent, ComposeMessageComponent],
@@ -18,6 +19,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
     FormsModule,
     HeroesModule,
     CrisisCenterModule,
+    AdminModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
