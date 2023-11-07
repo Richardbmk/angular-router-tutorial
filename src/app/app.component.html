@@ -1,31 +1,40 @@
-<h1>Angular Router</h1>
-<nav>
-  <a
-    routerLink="/crisis-center"
-    routerLinkActive="activate"
-    ariaCurrentWhenActive="page"
-  >
-    Crisis Center
-  </a>
-  <a
-    routerLink="/heroes"
-    routerLinkActive="activate"
-    ariaCurrentWhenActive="page"
-  >
-    Heroes
-  </a>
-  <a
-    routerLink="/admin"
-    routerLinkActive="activate"
-    ariaCurrentWhenActive="page"
-  >
-    Admin
-  </a>
-  <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
-</nav>
+<div class="wrapper">
+  <h1 class="title">Angular Router</h1>
+  <nav>
+    <a
+      routerLink="/crisis-center"
+      routerLinkActive="activate"
+      ariaCurrentWhenActive="page"
+    >
+      Crisis Center
+    </a>
+    <a
+      routerLink="/heroes"
+      routerLinkActive="activate"
+      ariaCurrentWhenActive="page"
+    >
+      Heroes
+    </a>
+    <a
+      routerLink="/admin"
+      routerLinkActive="activate"
+      ariaCurrentWhenActive="page"
+    >
+      Admin
+    </a>
+    <a
+      routerLink="/login"
+      routerLinkActive="activate"
+      ariaCurrentWhenActive="page"
+    >
+      Login
+    </a>
+    <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
+  </nav>
 
-<div [@routeAnimation]="getAnimationData()">
-  <router-outlet></router-outlet>
+  <div [@routeAnimation]="getAnimationData()">
+    <router-outlet></router-outlet>
+  </div>
+
+  <router-outlet name="popup"></router-outlet>
 </div>
-
-<router-outlet name="popup"></router-outlet>

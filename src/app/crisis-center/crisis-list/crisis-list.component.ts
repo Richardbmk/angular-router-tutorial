@@ -12,7 +12,7 @@ import { CrisisService } from '../crisis.service';
   styleUrls: ['./crisis-list.component.css'],
 })
 export class CrisisListComponent implements OnInit {
-  crises$!: Observable<Crisis[]>;
+  crises$?: Observable<Crisis[]>;
   selectedId = 0;
 
   constructor(
@@ -20,8 +20,8 @@ export class CrisisListComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
-    this.crises$ = this.route.paramMap.pipe(
+  ngOnInit() {
+    this.crises$ = this.route.firstChild?.paramMap.pipe(
       switchMap((params) => {
         this.selectedId = parseInt(params.get('id')!, 10);
         return this.crisisService.getCrises();
