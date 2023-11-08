@@ -20,7 +20,7 @@ export class HeroListComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.heroes$ = this.route.paramMap.pipe(
       switchMap((params) => {
         this.selectedId = parseInt(params.get('id')!, 10);

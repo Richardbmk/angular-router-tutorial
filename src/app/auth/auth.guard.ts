@@ -3,8 +3,8 @@ import { Router, NavigationExtras } from '@angular/router';
 import { AuthService } from './auth.service';
 
 export const authGuard = () => {
-  const authService = inject(AuthService);
   const router = inject(Router);
+  const authService = inject(AuthService);
 
   if (authService.isLoggedIn) {
     return true;

@@ -7,11 +7,11 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 @Component({
-  selector: 'app-heroes-detail',
-  templateUrl: './heroes-detail.component.html',
-  styleUrls: ['./heroes-detail.component.css'],
+  selector: 'app-hero-detail',
+  templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.css'],
 })
-export class HeroesDetailComponent implements OnInit {
+export class HeroDetailComponent implements OnInit {
   hero$!: Observable<Hero>;
 
   constructor(
@@ -21,8 +21,6 @@ export class HeroesDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    // this.hero$ = this.service.getHeroes(id);
     this.hero$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => this.service.getHero(params.get('id')!))
     );

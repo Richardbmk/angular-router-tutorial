@@ -3,38 +3,32 @@
   <nav>
     <a
       routerLink="/crisis-center"
-      routerLinkActive="activate"
+      routerLinkActive="active"
       ariaCurrentWhenActive="page"
+      >Crisis Center</a
     >
-      Crisis Center
-    </a>
     <a
       routerLink="/superheroes"
-      routerLinkActive="activate"
+      routerLinkActive="active"
       ariaCurrentWhenActive="page"
+      >Heroes</a
     >
-      Heroes
-    </a>
     <a
       routerLink="/admin"
-      routerLinkActive="activate"
+      routerLinkActive="active"
       ariaCurrentWhenActive="page"
+      >Admin</a
     >
-      Admin
-    </a>
     <a
       routerLink="/login"
-      routerLinkActive="activate"
+      routerLinkActive="active"
       ariaCurrentWhenActive="page"
+      >Login</a
     >
-      Login
-    </a>
     <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
   </nav>
-
-  <div [@routeAnimation]="getAnimationData()">
+  <div [@routeAnimation]="getRouteAnimationData()">
     <router-outlet></router-outlet>
   </div>
-
   <router-outlet name="popup"></router-outlet>
 </div>

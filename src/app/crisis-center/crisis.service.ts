@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { Injectable } from '@angular/core';
+
 import { MessageService } from '../message.service';
 import { Crisis } from './crisis';
 import { CRISES } from './mock-crises';
@@ -25,5 +26,14 @@ export class CrisisService {
       // (+) before `id` turns the string into a number
       map((crises: Crisis[]) => crises.find((crisis) => crisis.id === +id)!)
     );
+  }
+
+  addCrisis(name: string) {
+    name = name.trim();
+    if (name) {
+      const crisis = { id: CrisisService.nextCrisisId++, name };
+      CRISES.push(crisis);
+      this.crises$.next(CRISES);
+    }
   }
 }
